@@ -125,7 +125,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
         <Input name="fone" />
       </InputArea>
       <InputArea>
-        <Label>Data Contrato</Label>
+        <Label>Dta. Contrato</Label>
         <Input name="data_contratacao" type="date" />
       </InputArea>
       <InputArea>

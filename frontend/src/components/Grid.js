@@ -82,9 +82,9 @@ const Grid = ({ users, setUsers, setOnEdit }) => {
             <Td width="15%" $onlyWeb>
               {item.fone}
             </Td>
-            <Td width="17%">{item.data_contratacao}</Td>
+            <Td width="12%">{item.data_contratacao}</Td>
             <Td width="20%">{item.cargo}</Td>
-            <Td width="15%">{item.gerente}</Td>
+            <Td width="30%">{item.gerente}</Td>
             <Td $alignCenter width="10%">
               <FaEdit onClick={() => handleEdit(item)} />
             </Td>
