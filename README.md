@@ -63,10 +63,10 @@ O componente utiliza **styled-components** para definir os estilos da tabela e s
 
 ## Funções  
 
-### `handleEdit`  
+## Função `handleEdit`  
 Função que define o item a ser editado.  
 
-### `handleDelete`  
+## Função `handleDelete`  
 Função assíncrona que exclui um usuário da lista e atualiza o estado.  
 
 ## Renderização  
