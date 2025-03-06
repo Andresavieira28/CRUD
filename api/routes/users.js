@@ -1,14 +1,36 @@
 import express from "express";
 import { addUser, deleteUser, getUsers, updateUser } from "../controllers/user.js";
 
-const router = express.Router()
+const router = express.Router();
 
-router.get("/", getUsers)
+/**
+ * Rota para obter todos os usuários.
+ * Método HTTP: GET
+ * URL: /
+ */
+router.get("/", getUsers);
 
-router.post("/", addUser)
+/**
+ * Rota para adicionar um novo usuário.
+ * Método HTTP: POST
+ * URL: /
+ */
+router.post("/", addUser);
 
-router.put("/:id", updateUser)
+/**
+ * Rota para atualizar um usuário existente.
+ * Método HTTP: PUT
+ * URL: /:id
+ * @param {string} id - ID do usuário a ser atualizado.
+ */
+router.put("/:id", updateUser);
 
-router.delete("/:id", deleteUser)
+/**
+ * Rota para deletar um usuário.
+ * Método HTTP: DELETE
+ * URL: /:id
+ * @param {string} id - ID do usuário a ser deletado.
+ */
+router.delete("/:id", deleteUser);
 
-export default router
+export default router;

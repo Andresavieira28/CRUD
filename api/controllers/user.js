@@ -1,5 +1,11 @@
 import { db } from "../db.js";
 
+/**
+ * Obtém todos os usuários do banco de dados.
+ * 
+ * @param {Object} _ - Parâmetro não utilizado.
+ * @param {Object} res - Objeto de resposta HTTP.
+ */
 export const getUsers = (_, res) => {
   const q = "SELECT * FROM usuarios";
 
@@ -10,6 +16,12 @@ export const getUsers = (_, res) => {
   });
 };
 
+/**
+ * Adiciona um novo usuário ao banco de dados.
+ * 
+ * @param {Object} req - Objeto de requisição HTTP.
+ * @param {Object} res - Objeto de resposta HTTP.
+ */
 export const addUser = (req, res) => {
   const { nome, email, fone, data_contratacao, cargo, gerente, salario } = req.body;
 
@@ -39,7 +51,12 @@ export const addUser = (req, res) => {
   });
 };
 
-
+/**
+ * Atualiza um usuário existente no banco de dados.
+ * 
+ * @param {Object} req - Objeto de requisição HTTP.
+ * @param {Object} res - Objeto de resposta HTTP.
+ */
 export const updateUser = (req, res) => {
   const q =
     "UPDATE usuarios SET `nome` = ?, `email` = ?, `fone` = ?, `data_contratacao` = ?, `cargo` =?, `gerente` =?, `salario` =? WHERE `id` = ?";
@@ -61,6 +78,12 @@ export const updateUser = (req, res) => {
   });
 };
 
+/**
+ * Deleta um usuário do banco de dados.
+ * 
+ * @param {Object} req - Objeto de requisição HTTP.
+ * @param {Object} res - Objeto de resposta HTTP.
+ */
 export const deleteUser = (req, res) => {
   const q = "DELETE FROM usuarios WHERE `id` = ?";
 
