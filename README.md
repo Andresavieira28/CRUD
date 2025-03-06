@@ -1,24 +1,48 @@
-Documentação
+# Documentação
 
-Componente React Form:
+## Componente React Form
 
-É utilizado para criar ou editar informações de um usuário. 
-Ele utiliza várias bibliotecas, incluindo axios para fazer requisições HTTP, react-toastify para exibir notificações, styled-components para estilização 
-e useRef e useEffect do React para manipulação de referências e efeitos colaterais.
+O **Componente React Form** é utilizado para criar ou editar informações de um usuário.  
+Ele utiliza várias bibliotecas, incluindo:
 
-axios: Biblioteca para fazer requisições HTTP.
-React, useEffect, useRef: Importações do React para criar componentes e hooks.
-styled-components: Biblioteca para estilização de componentes.
-toast: Função para exibir notificações.
-FormContainer: Estiliza o formulário principal.
-InputArea: Estiliza a área de cada campo de entrada.
-Input: Estiliza os campos de entrada.
-Label: Estiliza os rótulos dos campos.
-Button: Estiliza o botão de submissão.
-useRef: Cria uma referência para o formulário.
-useEffect: Atualiza os campos do formulário se onEdit estiver definido.
+- **axios**: Para fazer requisições HTTP.
+- **react-toastify**: Para exibir notificações.
+- **styled-components**: Para estilização.
+- **useRef** e **useEffect** do React: Para manipulação de referências e efeitos colaterais.
 
-Função handleSubmit
-Função que lida com a submissão do formulário. Verifica se todos os campos estão preenchidos, faz uma requisição PUT ou POST dependendo se onEdit está definido,
-e limpa os campos do formulário após a submissão. Renderiza o formulário com campos de entrada para nome, e-mail, telefone, data de contratação, cargo, gerente e salário, além de um botão de submissão.
-Este componente é utilizado para criar ou editar informações de um usuário, enviando os dados para um servidor backend e exibindo notificações de sucesso ou erro.
+### Bibliotecas e funcionalidades usadas:
+
+- **axios**: Biblioteca para fazer requisições HTTP.
+- **React, useEffect, useRef**: Importações do React para criar componentes e hooks.
+- **styled-components**: Biblioteca para estilização de componentes.
+- **toast**: Função para exibir notificações.
+- **FormContainer**: Estiliza o formulário principal.
+- **InputArea**: Estiliza a área de cada campo de entrada.
+- **Input**: Estiliza os campos de entrada.
+- **Label**: Estiliza os rótulos dos campos.
+- **Button**: Estiliza o botão de submissão.
+- **useRef**: Cria uma referência para o formulário.
+- **useEffect**: Atualiza os campos do formulário se `onEdit` estiver definido.
+
+## Função `handleSubmit`
+
+A função **handleSubmit** lida com a submissão do formulário. Suas responsabilidades incluem:
+
+1. **Verificar** se todos os campos estão preenchidos.
+2. **Fazer uma requisição HTTP** (PUT ou POST) dependendo se `onEdit` está definido.
+3. **Limpar os campos** do formulário após a submissão.
+
+### Estrutura do Formulário
+
+O formulário contém os seguintes campos de entrada:
+
+- Nome
+- E-mail
+- Telefone
+- Data de contratação
+- Cargo
+- Gerente
+- Salário
+- Botão de submissão
+
+Este componente é utilizado para **criar ou editar informações de um usuário**, enviando os dados para um servidor backend e exibindo notificações de sucesso ou erro.
