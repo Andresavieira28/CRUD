@@ -51,7 +51,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
       user.nome.value = onEdit.nome;
       user.email.value = onEdit.email;
       user.fone.value = onEdit.fone;
-      user.data_nascimento.value = onEdit.data_nascimento;
+      user.data_contratacao.value = onEdit.data_contratacao;
       user.cargo.value = onEdit.cargo;
       user.gerente.value = onEdit.gerente;
     }
@@ -66,7 +66,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
       !user.nome.value ||
       !user.email.value ||
       !user.fone.value ||
-      !user.data_nascimento.value ||
+      !user.data_contratacao.value ||
       !user.cargo.value ||
       !user.gerente.value
     ) {
@@ -79,7 +79,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
           nome: user.nome.value,
           email: user.email.value,
           fone: user.fone.value,
-          data_nascimento: user.data_nascimento.value,
+          data_contratacao: user.data_contratacao.value,
           cargo: user.cargo.value,
           gerente: user.gerente.value,
         })
@@ -91,7 +91,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
           nome: user.nome.value,
           email: user.email.value,
           fone: user.fone.value,
-          data_nascimento: user.data_nascimento.value,
+          data_contratacao: user.data_contratacao.value,
           cargo: user.cargo.value,
           gerente: user.gerente.value,
         })
@@ -102,7 +102,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
     user.nome.value = "";
     user.email.value = "";
     user.fone.value = "";
-    user.data_nascimento.value = "";
+    user.data_contratacao.value = "";
     user.cargo.value = "";
     user.gerente.value = "";
 
@@ -125,8 +125,8 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
         <Input name="fone" />
       </InputArea>
       <InputArea>
-        <Label>Data de Nascimento</Label>
-        <Input name="data_nascimento" type="date" />
+        <Label>Data Contrato</Label>
+        <Input name="data_contratacao" type="date" />
       </InputArea>
       <InputArea>
         <Label>Cargo</Label>

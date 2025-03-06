@@ -67,7 +67,7 @@ const Grid = ({ users, setUsers, setOnEdit }) => {
           <Th>Nome</Th>
           <Th>Email</Th>
           <Th $onlyWeb>Fone</Th>
-          <Th>Data</Th>
+          <Th>Data Contrato</Th>
           <Th>Cargo</Th>
           <Th>Gerente</Th>
           <Th></Th>
@@ -77,12 +77,12 @@ const Grid = ({ users, setUsers, setOnEdit }) => {
       <Tbody>
         {users.map((item, i) => (
           <Tr key={i}>
-            <Td width="20%">{item.nome}</Td>
+            <Td width="17%">{item.nome}</Td>
             <Td width="20%">{item.email}</Td>
             <Td width="15%" $onlyWeb>
               {item.fone}
             </Td>
-            <Td width="15%">{item.data_nascimento}</Td>
+            <Td width="17%">{item.data_contratacao}</Td>
             <Td width="20%">{item.cargo}</Td>
             <Td width="15%">{item.gerente}</Td>
             <Td $alignCenter width="10%">
