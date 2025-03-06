@@ -11,19 +11,19 @@ export const getUsers = (_, res) => {
 };
 
 export const addUser = (req, res) => {
-  const { nome, email, fone, data_nascimento } = req.body;
+  const { nome, email, fone, data_nascimento, cargo } = req.body;
 
   // Verificando se todos os campos necessários foram fornecidos
-  if (!nome || !email || !fone || !data_nascimento) {
+  if (!nome || !email || !fone || !data_nascimento || !cargo) {
     return res.status(400).json("Todos os campos são obrigatórios.");
   }
 
   console.log("Dados recebidos para adicionar usuário:", req.body);
 
   const q =
-    "INSERT INTO usuarios(`nome`, `email`, `fone`, `data_nascimento`) VALUES(?, ?, ?, ?)";
+    "INSERT INTO usuarios(`nome`, `email`, `fone`, `data_nascimento`, `cargo`) VALUES(?, ?, ?, ?, ?)";
 
-  const values = [nome, email, fone, data_nascimento];
+  const values = [nome, email, fone, data_nascimento, cargo];
 
   // Verificando os valores antes de enviar ao banco de dados
   console.log("Consultando com os valores:", values);
@@ -42,13 +42,14 @@ export const addUser = (req, res) => {
 
 export const updateUser = (req, res) => {
   const q =
-    "UPDATE usuarios SET `nome` = ?, `email` = ?, `fone` = ?, `data_nascimento` = ? WHERE `id` = ?";
+    "UPDATE usuarios SET `nome` = ?, `email` = ?, `fone` = ?, `data_nascimento` = ?, `cargo` =? WHERE `id` = ?";
 
   const values = [
     req.body.nome,
     req.body.email,
     req.body.fone,
     req.body.data_nascimento,
+    req.body.cargo,
   ];
 
   db.query(q, [...values, req.params.id], (err) => {

@@ -50,6 +50,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
       user.email.value = onEdit.email;
       user.fone.value = onEdit.fone;
       user.data_nascimento.value = onEdit.data_nascimento;
+      user.cargo.value = onEdit.cargo;
     }
   }, [onEdit]);
 
@@ -62,7 +63,8 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
       !user.nome.value ||
       !user.email.value ||
       !user.fone.value ||
-      !user.data_nascimento.value
+      !user.data_nascimento.value ||
+      !user.cargo.value
     ) {
       return toast.warn("Preencha todos os campos!");
     }
@@ -74,6 +76,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
           email: user.email.value,
           fone: user.fone.value,
           data_nascimento: user.data_nascimento.value,
+          cargo: user.cargo.value,
         })
         .then(({ data }) => toast.success(data))
         .catch(({ data }) => toast.error(data));
@@ -84,6 +87,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
           email: user.email.value,
           fone: user.fone.value,
           data_nascimento: user.data_nascimento.value,
+          cargo: user.cargo.value,
         })
         .then(({ data }) => toast.success(data))
         .catch(({ data }) => toast.error(data));
@@ -93,6 +97,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
     user.email.value = "";
     user.fone.value = "";
     user.data_nascimento.value = "";
+    user.cargo.value = "";
 
     setOnEdit(null);
     getUsers();
@@ -116,7 +121,10 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
         <Label>Data de Nascimento</Label>
         <Input name="data_nascimento" type="date" />
       </InputArea>
-
+      <InputArea>
+        <Label>Cargo</Label>
+        <Input name="cargo" type="text" />
+      </InputArea>
       <Button type="submit">SALVAR</Button>
     </FormContainer>
   );
