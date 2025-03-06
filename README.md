@@ -46,3 +46,31 @@ O formulário contém os seguintes campos de entrada:
 - Botão de submissão
 
 Este componente é utilizado para **criar ou editar informações de um usuário**, enviando os dados para um servidor backend e exibindo notificações de sucesso ou erro.
+
+# Componente React Grid
+
+O componente **Grid** é um componente React que exibe uma tabela de usuários com funcionalidades de edição e exclusão. Ele utiliza bibliotecas como:
+
+- **axios** para requisições HTTP  
+- **styled-components** para estilização  
+- **react-icons** para ícones  
+- **react-toastify** para notificações  
+
+## Importações
+
+### Estilização  
+O componente utiliza **styled-components** para definir os estilos da tabela e seus elementos.  
+
+## Funções  
+
+### `handleEdit`  
+Função que define o item a ser editado.  
+
+### `handleDelete`  
+Função assíncrona que exclui um usuário da lista e atualiza o estado.  
+
+## Renderização  
+O componente renderiza uma tabela com os dados dos usuários e ícones para editar e excluir.  
+
+## Exportação  
+O componente é exportado como padrão.  
