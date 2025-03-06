@@ -6,10 +6,12 @@ import { toast } from "react-toastify";
 const FormContainer = styled.form`
   display: flex;
   align-items: flex-end;
+  width: 100%;
+  max-width: 2000px;
   gap: 10px;
   flex-wrap: wrap;
   background-color: orange;
-  padding: 20px;
+  padding: 15px;
   box-shadow: 0px 0px 5px #ccc;
   border-radius: 5px;
 `;
@@ -51,6 +53,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
       user.fone.value = onEdit.fone;
       user.data_nascimento.value = onEdit.data_nascimento;
       user.cargo.value = onEdit.cargo;
+      user.gerente.value = onEdit.gerente;
     }
   }, [onEdit]);
 
@@ -64,7 +67,8 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
       !user.email.value ||
       !user.fone.value ||
       !user.data_nascimento.value ||
-      !user.cargo.value
+      !user.cargo.value ||
+      !user.gerente.value
     ) {
       return toast.warn("Preencha todos os campos!");
     }
@@ -77,6 +81,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
           fone: user.fone.value,
           data_nascimento: user.data_nascimento.value,
           cargo: user.cargo.value,
+          gerente: user.gerente.value,
         })
         .then(({ data }) => toast.success(data))
         .catch(({ data }) => toast.error(data));
@@ -88,6 +93,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
           fone: user.fone.value,
           data_nascimento: user.data_nascimento.value,
           cargo: user.cargo.value,
+          gerente: user.gerente.value,
         })
         .then(({ data }) => toast.success(data))
         .catch(({ data }) => toast.error(data));
@@ -98,6 +104,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
     user.fone.value = "";
     user.data_nascimento.value = "";
     user.cargo.value = "";
+    user.gerente.value = "";
 
     setOnEdit(null);
     getUsers();
@@ -125,6 +132,11 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
         <Label>Cargo</Label>
         <Input name="cargo" type="text" />
       </InputArea>
+      <InputArea>
+        <Label>Gerente</Label>
+        <Input name="gerente" type="text" />
+      </InputArea>
+
       <Button type="submit">SALVAR</Button>
     </FormContainer>
   );

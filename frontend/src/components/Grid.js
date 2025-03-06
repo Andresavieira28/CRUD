@@ -6,11 +6,11 @@ import { toast } from "react-toastify";
 
 const Table = styled.table`
   width: 100%;
+  max-width: 2000px;
   background-color: orange;
   padding: 10px;
   box-shadow: 0px 0px 5px #ccc;
   border-radius: 5px;
-  max-width: 100%;
   margin: 20px auto;
   word-break: break-all;
 `;
@@ -69,6 +69,7 @@ const Grid = ({ users, setUsers, setOnEdit }) => {
           <Th $onlyWeb>Fone</Th>
           <Th>Data</Th>
           <Th>Cargo</Th>
+          <Th>Gerente</Th>
           <Th></Th>
           <Th></Th>
         </Tr>
@@ -77,16 +78,17 @@ const Grid = ({ users, setUsers, setOnEdit }) => {
         {users.map((item, i) => (
           <Tr key={i}>
             <Td width="20%">{item.nome}</Td>
-            <Td width="32%">{item.email}</Td>
+            <Td width="20%">{item.email}</Td>
             <Td width="15%" $onlyWeb>
               {item.fone}
             </Td>
             <Td width="15%">{item.data_nascimento}</Td>
             <Td width="20%">{item.cargo}</Td>
-            <Td $alignCenter width="5%">
+            <Td width="15%">{item.gerente}</Td>
+            <Td $alignCenter width="10%">
               <FaEdit onClick={() => handleEdit(item)} />
             </Td>
-            <Td $alignCenter width="5%">
+            <Td $alignCenter width="10%">
               <FaTrash onClick={() => handleDelete(item.id)} />
             </Td>
           </Tr>
