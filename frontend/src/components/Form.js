@@ -8,7 +8,7 @@ const FormContainer = styled.form`
   align-items: flex-end;
   gap: 10px;
   flex-wrap: wrap;
-  background-color: #fff;
+  background-color: orange;
   padding: 20px;
   box-shadow: 0px 0px 5px #ccc;
   border-radius: 5px;
