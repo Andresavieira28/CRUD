@@ -7,6 +7,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import itauLogo from "./assets/itau-logo.png";
+import SearchBar from "./components/SearchBar"; // 👈 novo import
 
 const Container = styled.div`
   width: 100%;
@@ -28,6 +29,7 @@ const Title = styled.h2`
 function App() {
   const [users, setUsers] = useState([]);
   const [onEdit, setOnEdit] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const getUsers = async () => {
     try {
@@ -47,7 +49,8 @@ function App() {
       <Container>
       <Title><img src={itauLogo} alt="Logo Itaú" style={{ width: "60px", height: "auto" }} />CADASTRO DE FUNCIONÁRIOS</Title>
         <Form onEdit={onEdit} setOnEdit={setOnEdit} getUsers={getUsers} />
-        <Grid setOnEdit={setOnEdit} users={users} setUsers={setUsers} />
+        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        <Grid setOnEdit={setOnEdit}users={users.filter(user =>user.nome.toLowerCase().includes(searchTerm.toLowerCase()))}setUsers={setUsers}/>
       </Container>
       <ToastContainer autoClose={3000} />
       <GlobalStyle />

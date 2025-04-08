@@ -11,7 +11,7 @@ const Table = styled.table`
   padding: 10px;
   box-shadow: 0px 0px 5px #ccc;
   border-radius: 5px;
-  margin: 20px auto;
+  margin: 5px auto;
   word-break: break-all;
 `;
 
@@ -98,7 +98,9 @@ const Grid = ({ users, setUsers, setOnEdit }) => {
             </Td> 
             <Td width="20%">{item.gerente}</Td>
             <Td $alignCenter width="20%">
-              <FaEdit onClick={() => handleEdit(item)} />
+              <div style={{ marginLeft: '10px' }}>
+                <FaEdit onClick={() => handleEdit(item)} />
+              </div>
             </Td>
             <Td $alignCenter width="20%">
               <FaTrash onClick={() => handleDelete(item.id)} />
