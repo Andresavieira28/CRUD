@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import itauLogo from "./assets/itau-logo.png";
 
 const Container = styled.div`
   width: 100%;
@@ -17,7 +18,12 @@ const Container = styled.div`
   gap: 10px;
 `;
 
-const Title = styled.h2``;
+const Title = styled.h2`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: blue;
+`;
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -39,7 +45,7 @@ function App() {
   return (
     <>
       <Container>
-        <Title>CADASTRO DE FUNCIONÁRIOS - ITAÚ</Title>
+      <Title><img src={itauLogo} alt="Logo Itaú" style={{ width: "60px", height: "auto" }} />CADASTRO DE FUNCIONÁRIOS</Title>
         <Form onEdit={onEdit} setOnEdit={setOnEdit} getUsers={getUsers} />
         <Grid setOnEdit={setOnEdit} users={users} setUsers={setUsers} />
       </Container>
