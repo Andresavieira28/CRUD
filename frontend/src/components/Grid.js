@@ -88,12 +88,14 @@ const Grid = ({ users, setUsers, setOnEdit }) => {
           <Tr key={i}>
             <Td width="15%">{item.nome}</Td>
             <Td width="20%">{item.email}</Td>
-            <Td width="11%" $onlyWeb>
-              {item.fone}
-            </Td>
+            <Td width="11%" $onlyWeb>{item.fone}</Td>
             <Td width="11%">{formatDate(item.data_contratacao)}</Td>
             <Td width="20%">{item.cargo}</Td>
-            <Td width="10%">R${item.salario}</Td> 
+            <Td width="10%">{Number(item.salario).toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+              })}
+            </Td> 
             <Td width="20%">{item.gerente}</Td>
             <Td $alignCenter width="20%">
               <FaEdit onClick={() => handleEdit(item)} />
