@@ -15,6 +15,12 @@ const Table = styled.table`
   word-break: break-all;
 `;
 
+const formatDate = (isoDate) => {
+  if (!isoDate) return "";
+  const [year, month, day] = isoDate.split("-");
+  return `${day}/${month}/${year}`;
+};
+
 export const Thead = styled.thead``;
 
 export const Tbody = styled.tbody``;
@@ -76,21 +82,23 @@ const Grid = ({ users, setUsers, setOnEdit }) => {
         </Tr>
       </Thead>
       <Tbody>
-        {users.map((item, i) => (
+      {[...users]
+          .sort((a, b) => new Date(a.data_contratacao) - new Date(b.data_contratacao))
+          .map((item, i) => (
           <Tr key={i}>
             <Td width="15%">{item.nome}</Td>
             <Td width="20%">{item.email}</Td>
-            <Td width="12%" $onlyWeb>
+            <Td width="11%" $onlyWeb>
               {item.fone}
             </Td>
-            <Td width="12%">{item.data_contratacao}</Td>
-            <Td width="15%">{item.cargo}</Td>
+            <Td width="11%">{formatDate(item.data_contratacao)}</Td>
+            <Td width="20%">{item.cargo}</Td>
             <Td width="10%">R${item.salario}</Td> 
             <Td width="20%">{item.gerente}</Td>
-            <Td $alignCenter width="15%">
+            <Td $alignCenter width="20%">
               <FaEdit onClick={() => handleEdit(item)} />
             </Td>
-            <Td $alignCenter width="15%">
+            <Td $alignCenter width="20%">
               <FaTrash onClick={() => handleDelete(item.id)} />
             </Td>
           </Tr>
