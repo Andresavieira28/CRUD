@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Documentação
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Componente React Form
 
-## Available Scripts
+O **Componente React Form** é utilizado para criar ou editar informações de um usuário.  
+Ele utiliza várias bibliotecas, incluindo:
 
-In the project directory, you can run:
+- **axios**: Para fazer requisições HTTP.
+- **react-toastify**: Para exibir notificações.
+- **styled-components**: Para estilização.
+- **useRef** e **useEffect** do React: Para manipulação de referências e efeitos colaterais.
 
-### `npm start`
+### Bibliotecas e funcionalidades usadas:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **axios**: Biblioteca para fazer requisições HTTP.
+- **React, useEffect, useRef**: Importações do React para criar componentes e hooks.
+- **styled-components**: Biblioteca para estilização de componentes.
+- **toast**: Função para exibir notificações.
+- **FormContainer**: Estiliza o formulário principal.
+- **InputArea**: Estiliza a área de cada campo de entrada.
+- **Input**: Estiliza os campos de entrada.
+- **Label**: Estiliza os rótulos dos campos.
+- **Button**: Estiliza o botão de submissão.
+- **useRef**: Cria uma referência para o formulário.
+- **useEffect**: Atualiza os campos do formulário se `onEdit` estiver definido.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Função `handleSubmit`
 
-### `npm test`
+A função **handleSubmit** lida com a submissão do formulário. Suas responsabilidades incluem:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Verificar** se todos os campos estão preenchidos.
+2. **Fazer uma requisição HTTP** (PUT ou POST) dependendo se `onEdit` está definido.
+3. **Limpar os campos** do formulário após a submissão.
 
-### `npm run build`
+### Estrutura do Formulário
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+O formulário contém os seguintes campos de entrada:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Nome
+- E-mail
+- Telefone
+- Data de contratação
+- Cargo
+- Gerente
+- Salário
+- Botão de submissão
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Este componente é utilizado para **criar ou editar informações de um usuário**, enviando os dados para um servidor backend e exibindo notificações de sucesso ou erro.
 
-### `npm run eject`
+# Componente React Grid
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+O componente **Grid** é um componente React que exibe uma tabela de usuários com funcionalidades de edição e exclusão. Ele utiliza bibliotecas como:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **axios** para requisições HTTP  
+- **styled-components** para estilização  
+- **react-icons** para ícones  
+- **react-toastify** para notificações  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Importações
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Estilização  
+O componente utiliza **styled-components** para definir os estilos da tabela e seus elementos.  
 
-## Learn More
+## Funções  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Função `handleEdit`  
+Função que define o item a ser editado.  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Função `handleDelete`  
+Função assíncrona que exclui um usuário da lista e atualiza o estado.  
 
-### Code Splitting
+## Renderização  
+O componente renderiza uma tabela com os dados dos usuários e ícones para editar e excluir.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Exportação  
+O componente é exportado como padrão.  
