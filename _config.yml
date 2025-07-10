@@ -6,8 +6,6 @@ exclude:
   - api/
   - node_modules/
   - README.md
-  - package.json
-  - package-lock.json
   - .github/
   - .gitignore
   - frontend/
