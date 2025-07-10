@@ -27,6 +27,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
+  "exclude": "node_modules",
   "eslintConfig": {
     "extends": [
       "react-app",
