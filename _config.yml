@@ -1,0 +1,13 @@
+# _config.yml
+
+title: Meu Projeto
+description: Projeto hospedado no GitHub Pages
+exclude:
+  - api/
+  - node_modules/
+  - README.md
+  - package.json
+  - package-lock.json
+  - .github/
+  - .gitignore
+  - frontend/
