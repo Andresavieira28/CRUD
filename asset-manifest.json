@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/crud/static/css/main.40df3699.css",
+    "main.js": "/crud/static/js/main.8355257b.js",
+    "static/media/itau-logo.png": "/crud/static/media/itau-logo.d73ec350c073e0bc50f8.png",
+    "index.html": "/crud/index.html",
+    "main.40df3699.css.map": "/crud/static/css/main.40df3699.css.map",
+    "main.8355257b.js.map": "/crud/static/js/main.8355257b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.40df3699.css",
+    "static/js/main.8355257b.js"
+  ]
+}
